@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FortuneTellerMVCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BirthMonth">
+    <Key>
+      <PropertyRef Name="BirthMonthID" />
+    </Key>
+    <Property Name="BirthMonthID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BirthMonth" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ColorList">
+    <Key>
+      <PropertyRef Name="ColorListID" />
+    </Key>
+    <Property Name="ColorListID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Color" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Rube">
+    <Key>
+      <PropertyRef Name="RubeID" />
+    </Key>
+    <Property Name="RubeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ColorListID" Type="int" Nullable="false" />
+    <Property Name="BirthMonthID" Type="int" Nullable="false" />
+    <Property Name="Age" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Transportation">
+    <Key>
+      <PropertyRef Name="TransportationID" />
+    </Key>
+    <Property Name="TransportationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Transportation" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VacaySpot">
+    <Key>
+      <PropertyRef Name="VacaySpotID" />
+    </Key>
+    <Property Name="VacaySpotID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VacaySpot" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Rube_BirthMonth">
+    <End Role="BirthMonth" Type="Self.BirthMonth" Multiplicity="1" />
+    <End Role="Rube" Type="Self.Rube" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BirthMonth">
+        <PropertyRef Name="BirthMonthID" />
+      </Principal>
+      <Dependent Role="Rube">
+        <PropertyRef Name="BirthMonthID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rube_ColorList">
+    <End Role="ColorList" Type="Self.ColorList" Multiplicity="1" />
+    <End Role="Rube" Type="Self.Rube" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ColorList">
+        <PropertyRef Name="ColorListID" />
+      </Principal>
+      <Dependent Role="Rube">
+        <PropertyRef Name="ColorListID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="FortuneTellerMVCModelStoreContainer">
+    <EntitySet Name="BirthMonth" EntityType="Self.BirthMonth" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ColorList" EntityType="Self.ColorList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rube" EntityType="Self.Rube" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Transportation" EntityType="Self.Transportation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VacaySpot" EntityType="Self.VacaySpot" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Rube_BirthMonth" Association="Self.FK_Rube_BirthMonth">
+      <End Role="BirthMonth" EntitySet="BirthMonth" />
+      <End Role="Rube" EntitySet="Rube" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rube_ColorList" Association="Self.FK_Rube_ColorList">
+      <End Role="ColorList" EntitySet="ColorList" />
+      <End Role="Rube" EntitySet="Rube" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

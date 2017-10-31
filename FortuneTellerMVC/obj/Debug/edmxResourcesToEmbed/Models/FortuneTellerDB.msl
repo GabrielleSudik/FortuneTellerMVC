@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FortuneTellerMVCModelStoreContainer" CdmEntityContainer="FortuneTellerMVCEntities">
+    <EntitySetMapping Name="BirthMonths">
+      <EntityTypeMapping TypeName="FortuneTellerMVCModel.BirthMonth">
+        <MappingFragment StoreEntitySet="BirthMonth">
+          <ScalarProperty Name="BirthMonthID" ColumnName="BirthMonthID" />
+          <ScalarProperty Name="BirthMonth1" ColumnName="BirthMonth" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ColorLists">
+      <EntityTypeMapping TypeName="FortuneTellerMVCModel.ColorList">
+        <MappingFragment StoreEntitySet="ColorList">
+          <ScalarProperty Name="ColorListID" ColumnName="ColorListID" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rubes">
+      <EntityTypeMapping TypeName="FortuneTellerMVCModel.Rube">
+        <MappingFragment StoreEntitySet="Rube">
+          <ScalarProperty Name="RubeID" ColumnName="RubeID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="ColorListID" ColumnName="ColorListID" />
+          <ScalarProperty Name="BirthMonthID" ColumnName="BirthMonthID" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Transportations">
+      <EntityTypeMapping TypeName="FortuneTellerMVCModel.Transportation">
+        <MappingFragment StoreEntitySet="Transportation">
+          <ScalarProperty Name="TransportationID" ColumnName="TransportationID" />
+          <ScalarProperty Name="Transportation1" ColumnName="Transportation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VacaySpots">
+      <EntityTypeMapping TypeName="FortuneTellerMVCModel.VacaySpot">
+        <MappingFragment StoreEntitySet="VacaySpot">
+          <ScalarProperty Name="VacaySpotID" ColumnName="VacaySpotID" />
+          <ScalarProperty Name="VacaySpot1" ColumnName="VacaySpot" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
