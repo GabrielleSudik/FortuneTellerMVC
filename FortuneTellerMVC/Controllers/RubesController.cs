@@ -83,11 +83,73 @@ namespace FortuneTellerMVC.Controllers
             }
 
             ViewBag.RetYears = yearsTillRetirement;    //retYears;
-            //OMG finally worked!
+                                                       //OMG finally worked!
 
             //next part: colors/transport place:
 
+            //looks like you have to change strings of colors ("red") etc
+            //for the color ID int.
+            //let's see if we get the right thing...
+            //yeah you did, with some edits.
 
+            //you started with 0 - 6. might need to switch to 1 - 7. 
+            //Later: You did switch.
+
+            //step two will be filling in the transportation table with data
+            //and linking that instead of what you write here.
+            //not done yet.
+
+            string transport = "";
+
+            switch (rube.ColorListID)
+            {
+                case 7:  //this number out of order because you first started with 0, switched to 1.
+                    transport = "car";
+                    break;
+                case 1:
+                    transport = "pogo stick";
+                    break;
+                case 2:
+                    transport = "bicycle";
+                    break;
+                case 3:
+                    transport = "spaceship";
+                    break;
+                case 4:
+                    transport = "boat";
+                    break;
+                case 5:
+                    transport = "skateboard";
+                    break;
+                case 6:
+                    transport = "Harley Davidson";
+                    break;
+            }
+
+            ViewBag.RetVehicle = transport;
+
+            //now the month/dollars in bank bit:
+
+            double dollars;
+
+            if (rube.BirthMonthID >= 1 && rube.BirthMonthID <= 4)
+            {
+                dollars = 25000;
+            }
+            else if (rube.BirthMonthID >= 5 && rube.BirthMonthID <= 8)
+            {
+                dollars = 300000;
+            }
+            else if (rube.BirthMonthID >= 9 && rube.BirthMonthID <= 12)
+            {
+                dollars = 6.37;
+            }
+            else
+            {
+                dollars = 0;
+            }
+
+            ViewBag.DollarsInBank = dollars;
 
 
             return View(rube);
