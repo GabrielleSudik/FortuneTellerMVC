@@ -18,8 +18,34 @@ namespace FortuneTellerMVC.Controllers
         public ActionResult Index()
         {
             var rubes = db.Rubes.Include(r => r.BirthMonth).Include(r => r.ColorList);
+
+            
+
             return View(rubes.ToList());
         }
+
+        //here's where you're going to start experimenting:
+        //i don't think this will work, at least not what you wrote
+
+            //instead, put it into details section below
+
+        //    public ActionResult RetirementFortune(int age)
+        //{
+        //    int retYears;
+
+        //    if (age % 2 == 0)
+        //    {
+        //        retYears = 5;
+        //    }
+        //    else
+        //    {
+        //        retYears = 10;
+        //    }
+
+        //    return ViewBag.RetYears;
+
+        //    //ViewBag.RetYears = 75; that was from the tutorial page only
+        //}
 
         // GET: Rubes/Details/5
         public ActionResult Details(int? id)
@@ -33,6 +59,37 @@ namespace FortuneTellerMVC.Controllers
             {
                 return HttpNotFound();
             }
+
+            //you're trying this spot to experiment too:
+
+            //this next line is pure experiment:
+            ViewBag.TryMe = 13;
+            //it WORKS! (see also view--detail page)
+
+            //another test:
+            string anotherTest = "meeeep!";
+            ViewBag.TryMeToo = anotherTest;
+            //that works too
+
+            int yearsTillRetirement;
+
+            if (rube.Age % 2 == 0)
+            {
+                yearsTillRetirement = 5;
+            }
+            else
+            {
+                yearsTillRetirement = 10;
+            }
+
+            ViewBag.RetYears = yearsTillRetirement;    //retYears;
+            //OMG finally worked!
+
+            //next part: colors/transport place:
+
+
+
+
             return View(rube);
         }
 

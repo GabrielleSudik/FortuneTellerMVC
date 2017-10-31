@@ -5,11 +5,11 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="fce60f038fc74055bc3a90a0d9265699" Name="Diagram1">
-        <EntityTypeShape EntityType="FortuneTellerMVCModel.BirthMonth" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="FortuneTellerMVCModel.ColorList" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="FortuneTellerMVCModel.Rube" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="FortuneTellerMVCModel.Transportation" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="FortuneTellerMVCModel.VacaySpot" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FortuneTellerMVCModel.BirthMonth" Width="1.5" PointX="0.5" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FortuneTellerMVCModel.ColorList" Width="1.5" PointX="4" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FortuneTellerMVCModel.Rube" Width="1.5" PointX="2.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FortuneTellerMVCModel.Transportation" Width="1.5" PointX="6.625" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FortuneTellerMVCModel.VacaySpot" Width="1.5" PointX="8.375" PointY="1.625" IsExpanded="true" />
         <AssociationConnector Association="FortuneTellerMVCModel.FK_Rube_BirthMonth" ManuallyRouted="false" />
         <AssociationConnector Association="FortuneTellerMVCModel.FK_Rube_ColorList" ManuallyRouted="false" />
       </Diagram>
