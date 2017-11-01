@@ -104,7 +104,7 @@ namespace FortuneTellerMVC.Controllers
             switch (rube.ColorListID)
             {
                 case 7:  //this number out of order because you first started with 0, switched to 1.
-                    transport = "car";
+                    transport = "car";  //Transportation(1); that, and variations of it don't work.
                     break;
                 case 1:
                     transport = "pogo stick";
@@ -127,6 +127,11 @@ namespace FortuneTellerMVC.Controllers
             }
 
             ViewBag.RetVehicle = transport;
+
+            //here you're just trying to print an item from another database
+            //ie, just get, say, ID 2 in transportation to print
+
+            //ViewBag.SampleVehicle = Transportation.TransportationID;
 
             //now the month/dollars in bank bit:
 
