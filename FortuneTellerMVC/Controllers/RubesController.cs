@@ -101,6 +101,14 @@ namespace FortuneTellerMVC.Controllers
 
             string transport = "";
 
+            //this next line is what you'd type (or something close to it)
+            //if you joined the color and transport tables.
+            //basically, it says, for whatever the rube's color choice is,
+            //find the matching transportation item
+            //you didn't join those tables before, so it won't work now.
+
+            //rube.Transportation = db.Transportations.Where(t => t.ColorId == rube.ColorListID).FirstOrDefault();
+
             switch (rube.ColorListID)
             {
                 case 7:  //this number out of order because you first started with 0, switched to 1.
